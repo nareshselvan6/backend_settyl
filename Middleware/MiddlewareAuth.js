@@ -7,7 +7,7 @@ export const authMiddleware = async(req,res,next)=>{
      const token = req.headers.authorization?.split(' ')[1]  // bearer token
 
      if(!token){
-        return res.status(401).json({message:"Token not found"})
+        return res.status(401).json({message:"Token not found"}) 
      }
      try {
         const decode = jwt.verify(token,process.env.JWT_SECRET_KEY)
