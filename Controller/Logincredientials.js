@@ -24,37 +24,6 @@ export const registeruser=async(req,res)=>{
 }
 
 //! user login
-// export const usersignin=async(req,res)=>{
-//     try {
-//         const {email,password}=req.body;
-//         console.log(email,password);
-        
-//         const loginuser=await logincrediential.findOne({email});
-
-//         if(!loginuser){
-//             return res.status(401).send("invalid email");
-//         }
-
-//         const pswrd = await bcrypt.compare(password,loginuser.password);
-        
-//         if(!pswrd){
-//             return res.status(401).send("invalid password");
-//         }
-        
-//         //JWT TOKEN
-
-//         const user = {email:email};
-//         // const accesstoken=jwt.sign(user,process.env.JWT_SECRET_KEY,{expiresIn:"1h"});
-//         const accesstoken=jwt.sign(user,process.env.JWT_SECRET_KEY);
-        
-//         res.status(200).json({message:"login successfully",accesstoken})
-        
-//     } catch (error) {
-//         res.status(500).send("error occured while sigining in");
-        
-//     }
-// }
-
 export const usersignin = async (req, res) => {
     try {
         const { email, password } = req.body;
